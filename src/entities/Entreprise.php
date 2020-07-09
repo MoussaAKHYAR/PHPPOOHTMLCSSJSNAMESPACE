@@ -14,9 +14,10 @@ class Entreprise{
   private $password;
   private $adrEntreprise;
 
-  
-  
-
+  public function __construct()
+  {
+    
+  }
   /**
    * Get the value of id
    */ 

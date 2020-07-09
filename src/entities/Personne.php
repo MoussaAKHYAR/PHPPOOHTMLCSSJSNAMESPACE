@@ -18,7 +18,10 @@ class Personne
   private $login;
   private $password;
 
-
+  public function __construct()
+  {
+    
+  }
 
   /**
    * Get the value of numero
