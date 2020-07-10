@@ -1,22 +1,55 @@
 <?php
 
+use Doctrine\ORM\Annotation as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+
 /**
  * @Entity
  * @Table(name="entreprise")
  */
 class Entreprise{
 
+/** 
+ * @ORM\Id
+ * @ORM\Column(type="integer")
+ * @ORM\GeneratedValue
+ */
   private $id;
+  /** 
+     * @ORM\Column(type="string") 
+     */
   private $nom;
+  /** 
+     * @ORM\Column(type="string") 
+     */
   private $tel;
+  /** 
+     * @ORM\Column(type="string") 
+     */
   private $email;
+  /** 
+     * @ORM\Column(type="string") 
+     */
   private $login;
+  /** 
+     * @ORM\Column(type="string") 
+     */
   private $password;
+  /** 
+     * @ORM\Column(type="string") 
+     */
   private $adrEntreprise;
+/**
+   * One entreprise has many comptes. This is the inverse side.
+   * @OneToMany(targetEntity="Compte", mappedBy="id")
+  */
+  private $comptes;
+
 
   public function __construct()
   {
-    
+    $this->comptes = new ArrayCollection();
   }
   /**
    * Get the value of id
@@ -154,6 +187,26 @@ class Entreprise{
   public function setAdrEntreprise($adrEntreprise)
   {
     $this->adrEntreprise = $adrEntreprise;
+
+    return $this;
+  }
+
+  /**
+   * Get the value of adrEntreprise
+   */ 
+  public function getComptes()
+  {
+    return $this->comptes;
+  }
+
+  /**
+   * Set the value of adrEntreprise
+   *
+   * @return  self
+   */ 
+  public function setComptes($comptes)
+  {
+    $this->comptes = $comptes;
 
     return $this;
   }

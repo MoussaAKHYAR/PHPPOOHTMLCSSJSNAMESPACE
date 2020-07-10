@@ -1,26 +1,67 @@
 <?php
 
+use Doctrine\ORM\Annotation as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @Entity
  * @Table(name = "personne")
  */
 class Personne
 {
+  /** 
+   * @ORM\Id
+   * @ORM\Column(type="string")
+   */
   private $numero;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $cin;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $nom;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $prenom;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $sexe;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $dateNaiss;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $telephone;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $adrPersonne;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $email;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $login;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $password;
+  /**
+   * One personne has many comptes. This is the inverse side.
+   * @OneToMany(targetEntity="Compte", mappedBy="matricule")
+  */
+  private $comptes;
 
   public function __construct()
   {
-    
+    $this->comptes = new ArrayCollection();
   }
 
   /**
@@ -239,6 +280,26 @@ class Personne
   public function setPassword($password)
   {
     $this->password = $password;
+
+    return $this;
+  }
+
+  /**
+   * Get the value of adrEntreprise
+   */ 
+  public function getComptes()
+  {
+    return $this->comptes;
+  }
+
+  /**
+   * Set the value of adrEntreprise
+   *
+   * @return  self
+   */ 
+  public function setComptes($comptes)
+  {
+    $this->comptes = $comptes;
 
     return $this;
   }

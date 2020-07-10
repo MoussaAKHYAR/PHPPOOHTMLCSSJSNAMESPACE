@@ -1,25 +1,86 @@
 <?php
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name = "compte")
+ */
 class Compte
 {
+  /** 
+   * @ORM\Id
+   * @ORM\Column(type="string")
+   */
   private $numero;
-  private $mat;
+  /**
+     * Many comptes have one personne. This is the owning side.
+     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="comptes")
+     * @ORM\JoinColumn(name="personne_matricule", referencedColumnName="matricule")
+     */
+  private $matricule;
+  /**
+     * Many comptes have one entreprise. This is the owning side.
+     * @ORM\ManyToOne(targetEntity="Entreprise", inversedBy="comptes")
+     * @ORM\JoinColumn(name="entreprise", referencedColumnName="id")
+     */
   private $id;
+  /** 
+   * @ORM\Column(type="string")
+   */
   private $rib;
+  /** 
+   * @ORM\Column(type="decimal")
+   */
   private $solde;
+  /** 
+   * @ORM\Column(type="date")
+   */
   private $dateOuverture;
+  /** 
+   * @ORM\Column(type="string")
+   */
   private $raisonSocial;
+  /** 
+   * @ORM\Column(type="decimal")
+   */
   private $salaire;
+  /** 
+   *@ORM\Column(type="string")
+   */
   private $nomEmployeur;
+   /** 
+     * @ORM\Column(type="string") 
+     */
   private $telEmployeur;
+  /** 
+   * @ORM\Column(type="string")
+   */
   private $numeroIdentification;
+  /** 
+   * @ORM\Column(type="string")
+   */
   private $agios;
+  /** 
+   * @ORM\Column(type="integer")
+   */
   private $fraisOuverture;
+  /** 
+   * @ORM\Column(type="integer")
+   */
   private $remuneration;
+  /** 
+   * @ORM\Column(type="date")
+   */
   private $dateDebut;
+  /** 
+   * @ORM\Column(type="date")
+   */
   private $dateFin;
+  /** 
+   * @ORM\Column(type="string")
+   */
   private $typeCompte;
-  
+
   public function __construct()
   {
     
@@ -48,9 +109,9 @@ class Compte
   /**
    * Get the value of mat
    */ 
-  public function getMat()
+  public function getMatricule()
   {
-    return $this->mat;
+    return $this->matricule;
   }
 
   /**
@@ -58,9 +119,9 @@ class Compte
    *
    * @return  self
    */ 
-  public function setMat($mat)
+  public function setMatricule($matricule)
   {
-    $this->mat = $mat;
+    $this->matricule = $matricule;
 
     return $this;
   }

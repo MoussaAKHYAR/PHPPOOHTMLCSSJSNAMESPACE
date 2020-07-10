@@ -1,10 +1,22 @@
 <?php
 
+use Doctrine\ORM\Annotation as ORM;
+/**
+ * @Entity
+ * @Table(name = "TypeCompte")
+ */
 class TypeCompte
 {
+  /** 
+   * @ORM\Id
+   * @ORM\Column(type="integer")
+   * @ORM\GeneratedValue
+  */
   private $id;
+  /** 
+  * @ORM\Column(type="string") 
+  */
   private $libelle;
-  private $comptes;
 
   public function __construct()
   {
@@ -51,24 +63,5 @@ class TypeCompte
     return $this;
   }
 
-  /**
-   * Get the value of id
-   */ 
-  public function getComptes()
-  {
-    return $this->comptes;
-  }
-
-  /**
-   * Set the value of id
-   *
-   * @return  self
-   */ 
-  public function setComptes($comptes)
-  {
-    $this->comptes = $comptes;
-
-    return $this;
-  }
 }
 ?>
