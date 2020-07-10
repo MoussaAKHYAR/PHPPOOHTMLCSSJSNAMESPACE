@@ -1,10 +1,10 @@
 <?php
 
-use Doctrine\ORM\Annotation as ORM;
+use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 /**
- * @Entity
- * @Table(name = "personne")
+ * @ORM\Entity
+ * @ORM\Table(name = "personne")
  */
 class Personne
 {
@@ -12,7 +12,7 @@ class Personne
    * @ORM\Id
    * @ORM\Column(type="string")
    */
-  private $numero;
+  private $matricule;
   /** 
   * @ORM\Column(type="string") 
   */
@@ -55,7 +55,7 @@ class Personne
   private $password;
   /**
    * One personne has many comptes. This is the inverse side.
-   * @OneToMany(targetEntity="Compte", mappedBy="matricule")
+   * @ORM\OneToMany(targetEntity="Compte", mappedBy="matricule")
   */
   private $comptes;
 
@@ -65,21 +65,21 @@ class Personne
   }
 
   /**
-   * Get the value of numero
+   * Get the value of matricule
    */ 
-  public function getNumero()
+  public function getMatricule()
   {
-    return $this->numero;
+    return $this->matricule;
   }
 
   /**
-   * Set the value of numero
+   * Set the value of matricule
    *
    * @return  self
    */ 
-  public function setNumero($numero)
+  public function setMatricule($matricule)
   {
-    $this->numero = $numero;
+    $this->matricule = $matricule;
 
     return $this;
   }

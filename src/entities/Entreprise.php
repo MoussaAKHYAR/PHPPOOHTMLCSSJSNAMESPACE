@@ -1,12 +1,11 @@
 <?php
-
-use Doctrine\ORM\Annotation as ORM;
+use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 
 /**
- * @Entity
- * @Table(name="entreprise")
+ * @ORM\Entity
+ * @ORM\Table(name="entreprise")
  */
 class Entreprise{
 
@@ -25,7 +24,7 @@ class Entreprise{
      */
   private $tel;
   /** 
-     * @ORM\Column(type="string") 
+     * @ORM\Column(type="string")
      */
   private $email;
   /** 
@@ -42,15 +41,15 @@ class Entreprise{
   private $adrEntreprise;
 /**
    * One entreprise has many comptes. This is the inverse side.
-   * @OneToMany(targetEntity="Compte", mappedBy="id")
+   * @ORM\OneToMany(targetEntity="Compte", mappedBy="id")
   */
   private $comptes;
-
 
   public function __construct()
   {
     $this->comptes = new ArrayCollection();
   }
+  
   /**
    * Get the value of id
    */ 

@@ -1,9 +1,9 @@
 <?php
 
-use Doctrine\ORM\Annotation as ORM;
+use Doctrine\ORM\Mapping as ORM;
 /**
- * @Entity
- * @Table(name = "TypeCompte")
+ * @ORM\Entity
+ * @ORM\Table(name = "TypeCompte")
  */
 class TypeCompte
 {
