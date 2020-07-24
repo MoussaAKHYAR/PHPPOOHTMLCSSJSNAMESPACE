@@ -16,7 +16,7 @@ class Autoloader
   {
     //echo $class;
     //echo str_replace("\\","/",$class);
-    if (file_exists(str_replace("\\","/",$class.".php"))) 
+    if (file_exists(str_replace("\\","/",$class.".php")))
     {
       require_once str_replace("\\","/",$class.".php");
     }
