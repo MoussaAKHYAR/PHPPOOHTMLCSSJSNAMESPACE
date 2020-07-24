@@ -4,5 +4,6 @@
   //header("location:login");
 
   $typeCompte = new TypeCompteController();
-  $typeCompte->add();
+  //$typeCompte->add();
+  $typeCompte->getAll();
 ?>

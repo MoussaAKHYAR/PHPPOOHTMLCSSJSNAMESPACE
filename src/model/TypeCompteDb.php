@@ -1,9 +1,11 @@
 <?php
-class TypeCompteDb
+namespace src\model;
+use libs\system\Model;
+class TypeCompteDb extends Model
 {
-  public function add()
+  public function findAll()
   {
-    echo 2;
+    return ["CMPTE SIMPLE","COMPTE BLOQUE"];
   }
 }
 ?>
