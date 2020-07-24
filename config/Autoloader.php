@@ -2,7 +2,7 @@
 class Autoloader
 {
   /**
-   * cette fonction va enregistrer une fonction nommée autoload déclarée la dessous 
+   * cette fonction va enregistrer une fonction nommée autoload déclarée la dessous
    */
   static function register()
   {
@@ -14,7 +14,12 @@ class Autoloader
    */
   static function autoload($class)
   {
-
+    //echo $class;
+    //echo str_replace("\\","/",$class);
+    if (file_exists(str_replace("\\","/",$class.".php"))) 
+    {
+      require_once str_replace("\\","/",$class.".php");
+    }
   }
 }
 Autoloader::register();
