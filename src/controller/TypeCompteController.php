@@ -1,11 +1,11 @@
 <?php
 namespace src\controller;
-
-class TypeCompteController
+use libs\system\Controller;
+class TypeCompteController extends Controller
 {
   public function add()
   {
-    echo 2;
+    return $this->view->load("typeCompte/add");
   }
 }
 
