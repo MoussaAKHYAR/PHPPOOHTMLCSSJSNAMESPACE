@@ -4,7 +4,6 @@ class BootStrap
 {
   public function __construct()
   {
-    
     if (isset($_GET["url"])) {
       $url = explode("/",$_GET["url"]);
       $controller_file = "src/controller/".$url[0]."Controller.php";
@@ -14,13 +13,22 @@ class BootStrap
         require_once $controller_file;
         $file = $url[0]."Controller";
         $controller_object = new $file();
+        if (isset($url[2])) {
+          $method = $url[1];
+          if (method_exists($controller_object, $method)) {
+            $controller_object->$method($url[2]);
+          }else{
+            die("cette methode ".$method." n'existe pas dans le controller");
+          }
+        }
         if (isset($url[1])) {
           $method = $url[1];
           if (method_exists($controller_object, $method)) {
             $controller_object->$method();
+          }else{
+            die("cette methode ".$method." n'existe pas dans le controller");
           }
-        }
-        else {
+        }else {
           die("rien a afficher");
         }
       }else{
