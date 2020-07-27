@@ -3,9 +3,13 @@ namespace src\model;
 use libs\system\Model;
 class TypeCompteDb extends Model
 {
+  public function __construct()
+  {
+    parent::__construct();
+  }
   public function findAll()
   {
-    return ["CMPTE SIMPLE","COMPTE BLOQUE"];
+    return ["COMPTE SIMPLE","COMPTE BLOQUE"];
   }
 }
 ?>
