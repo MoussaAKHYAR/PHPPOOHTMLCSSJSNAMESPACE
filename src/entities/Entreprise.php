@@ -1,6 +1,7 @@
 <?php
-use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+// use Doctrine\ORM\Mapping as ORM;
+// use Doctrine\Common\Collections\ArrayCollection;
+namespace src\entities;
 
 
 /**
@@ -39,7 +40,7 @@ class Entreprise{
      * @ORM\Column(type="string") 
      */
   private $adrEntreprise;
-/**
+  /**
    * One entreprise has many comptes. This is the inverse side.
    * @ORM\OneToMany(targetEntity="Compte", mappedBy="id")
   */
@@ -47,7 +48,7 @@ class Entreprise{
 
   public function __construct()
   {
-    $this->comptes = new ArrayCollection();
+    //$this->comptes = new ArrayCollection();
   }
   
   /**

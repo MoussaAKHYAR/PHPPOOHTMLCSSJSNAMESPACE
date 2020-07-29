@@ -1,7 +1,9 @@
 <?php
 
-use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+// use Doctrine\ORM\Mapping as ORM;
+// use Doctrine\Common\Collections\ArrayCollection;
+namespace src\entities;
+
 /**
  * @ORM\Entity
  * @ORM\Table(name = "personne")
@@ -61,7 +63,7 @@ class Personne
 
   public function __construct()
   {
-    $this->comptes = new ArrayCollection();
+    //$this->comptes = new ArrayCollection();
   }
 
   /**

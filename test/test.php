@@ -1,16 +1,16 @@
 <?php
-require_once '../bootstrap.php';
+// require_once '../bootstrap.php';
 
-  $typeCompte = new TypeCompte();
+//   $typeCompte = new TypeCompte();
 
-  $typeCompte->setLibelle("Compte bloqué");
+//   $typeCompte->setLibelle("Compte bloqué");
 
-  /**
-   * Insertion au niveau de la base de donnée
-   */
-  $entityManager->persist($typeCompte);
-  $entityManager->flush();
+//   /**
+//    * Insertion au niveau de la base de donnée
+//    */
+//   $entityManager->persist($typeCompte);
+//   $entityManager->flush();
 
-  echo $typeCompte->getId();
+//   echo $typeCompte->getId();
 
 ?>

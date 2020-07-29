@@ -1,6 +1,6 @@
 <?php
-
-use Doctrine\ORM\Mapping as ORM;
+namespace src\entities;
+//use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
@@ -14,16 +14,16 @@ class Compte
    */
   private $numero;
   /**
-     * Many comptes have one personne. This is the owning side.
-     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="comptes")
-     * @ORM\JoinColumn(name="personne_matricule", referencedColumnName="matricule")
-     */
+   * Many comptes have one personne. This is the owning side.
+   * @ORM\ManyToOne(targetEntity="Personne", inversedBy="comptes")
+   * @ORM\JoinColumn(name="personne_matricule", referencedColumnName="matricule")
+   */
   private $matricule;
   /**
-     * Many comptes have one entreprise. This is the owning side.
-     * @ORM\ManyToOne(targetEntity="Entreprise", inversedBy="comptes")
-     * @ORM\JoinColumn(name="entreprise", referencedColumnName="id")
-     */
+   * Many comptes have one entreprise. This is the owning side.
+   * @ORM\ManyToOne(targetEntity="Entreprise", inversedBy="comptes")
+   * @ORM\JoinColumn(name="entreprise", referencedColumnName="id")
+   */
   private $id;
   /** 
    * @ORM\Column(type="string")
