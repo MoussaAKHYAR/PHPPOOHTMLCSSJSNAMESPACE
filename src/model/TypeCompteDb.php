@@ -7,9 +7,6 @@ class TypeCompteDb extends Model
   {
     parent::__construct();
   }
-  public function findAll()
-  {
-    return ["COMPTE SIMPLE","COMPTE BLOQUE"];
-  }
+  
 }
 ?>

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="public/css/login.css" />
 </head>
 <body>
-  <form action="loginController" method="post" name="connexion" id="connexion">
+  <form action="login/seConnecter" method="post" name="connexion" id="connexion">
     <div class="login-div">
       <div class="logo"><img src="public/img/logo.png" alt="logo banque du peuple" class="image"/></div>
       <div class="title">Banque du peuple</div>
