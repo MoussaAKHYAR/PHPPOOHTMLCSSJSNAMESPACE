@@ -1,7 +1,7 @@
 <?php
 
-//use Doctrine\ORM\Mapping as ORM;
-namespace src\entities;
+use Doctrine\ORM\Mapping as ORM;
+//namespace src\entities;
 
 /**
  * @ORM\Entity

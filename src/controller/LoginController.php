@@ -1,6 +1,7 @@
 <?php
 
 use system\Controller;
+use src\model\UserModel;
 
 class Login extends Controller
 {
@@ -12,16 +13,17 @@ class Login extends Controller
    public function seConnecter()
    {
      extract($_POST);
-     $user = $username;
+     $user = $nomUtilisateur;
      $pass = $password;
 
      $userModel = new UserModel();
-     $userModel->login($user,$pass);
-    if ($userModel) {
+     $ok = $userModel->login($user,$pass);
+      //var_dump($ok)
+    if ($ok) {
       return $this->view->load("responsable/index");
     }
     else{
-      echo 5555;
+      return $this->view->load("welcome/index");
     }
    }
 }

@@ -2,7 +2,6 @@
 namespace system;
 use src\controller\Welcome;
 
-
 class BootApp
 {
     public function __construct()

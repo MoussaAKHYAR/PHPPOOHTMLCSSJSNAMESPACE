@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
-  <link rel="stylesheet" href="public/css/login.css" />
+  <link rel="stylesheet" href="http://localhost/mesprojets/TD3HTMLCSSPHPNAMESPACEORM/public/css/login.css" />
 </head>
 <body>
   <form action="login/seConnecter" method="post" name="connexion" id="connexion">
@@ -27,6 +27,6 @@
       </div>
     </div>
   </form>
-<script type="text/javascript" src="public/js/loginjs.js"></script>
+<script type="text/javascript" src="http://localhost/mesprojets/TD3HTMLCSSPHPNAMESPACEORM/public/js/loginjs.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-
+namespace src\model;
 use system\Model;
 
 class UserModel extends Model
@@ -8,10 +8,10 @@ class UserModel extends Model
   {
     parent::__construct();
   }
-
+  
   public function login($username,$password)
   {
-     return $this->em->createQuery("SELECT p FROM src\entities\Personne p WHERE p.login ='$username' AND p.password = '$password'")->getResult();
+     return $this->em->createQuery("SELECT p FROM Personne p WHERE p.login ='$username' AND p.password = '$password'")->getResult();
   }
 }
 

@@ -26,4 +26,4 @@ require_once "vendor/autoload.php";
   );
 
   // obtaining the entity manager
-  $em = EntityManager::create($conn, $config);
+  $entityManager = EntityManager::create($conn, $config);

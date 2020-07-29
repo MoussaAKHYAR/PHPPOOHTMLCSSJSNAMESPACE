@@ -1,7 +1,6 @@
 <?php
-//namespace src\controller;
+namespace src\controller;
 use libs\system\Controller;
-use src\model\TypeCompteDb;
 
 class TypeCompteController extends Controller
 {
@@ -16,13 +15,6 @@ class TypeCompteController extends Controller
     return $this->view->load("typeCompte/add");
   }
 
-  public function getAll()
-  {
-    $typeComptedao = new TypeCompteDb();
-    $typeComptes = $typeComptedao->findAll();
-    // $typeComptes = ["Compte courant", "Compte epargne"];
-    return $this->view->load("typeCompte/getAll",$typeComptes);
-  }
 }
 
 ?>
