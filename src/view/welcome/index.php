@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="http://localhost/mesprojets/TD3HTMLCSSPHPNAMESPACEORM/public/css/login.css" />
 </head>
 <body>
-  <form action="login/seConnecter" method="post" name="connexion" id="connexion">
+  <form action="http://localhost/mesprojets/TD3HTMLCSSPHPNAMESPACEORM/login/seConnecter" method="post" name="connexion" id="connexion">
     <div class="login-div">
       <div class="logo"><img src="public/img/logo.png" alt="logo banque du peuple" class="image"/></div>
       <div class="title">Banque du peuple</div>

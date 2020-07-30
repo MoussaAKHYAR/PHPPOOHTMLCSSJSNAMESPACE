@@ -1,7 +1,8 @@
 <?php
+//namespace src\entities;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-//namespace src\entities;
+
 
 
 /**
@@ -48,7 +49,7 @@ class Entreprise{
 
   public function __construct()
   {
-    //$this->comptes = new ArrayCollection();
+    $this->comptes = new ArrayCollection();
   }
   
   /**

@@ -25,7 +25,6 @@ namespace system;
                     }
                     break;
                 default:
-                    # code...
                     break;
             }
         }

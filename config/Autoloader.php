@@ -10,9 +10,10 @@ class Autoloader
         if (file_exists(str_replace("\\","/", $class.".php"))) {
             
             require_once str_replace("\\","/", $class.".php");
+            //echo 1;
 
         }else if (file_exists(str_replace("\\","/",$class."Controller.php"))) {
-
+            
             require_once str_replace("\\","/",$class."Controller.php");
 
         }else if (file_exists(str_replace("\\","/",$class."Model.php"))) {
